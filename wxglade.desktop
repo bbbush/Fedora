@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=wxGlade
+Comment=A wxWidgets/wxPython/wxPerl GUI designer
+Exec=wxglade
+Terminal=false
+Type=Application
+Icon=wxglade
+StartupNotify=true
+Categories=Development;
+
