@@ -1,7 +1,7 @@
 Summary: 	A wxWidgets/wxPython/wxPerl GUI designer
 Name: 		wxGlade
 Version: 	0.5
-Release: 4%{?dist}
+Release: 5%{?dist}
 Source0: 	http://downloads.sourceforge.net/wxglade/%{name}-%{version}.tar.gz
 Source1:    wxglade.desktop
 Source2:    wxglade.png
@@ -85,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Mon Apr 16 2007 ZC Miao <hellwolf.misty@gmail.com> - 0.5-4
+* Mon Apr 16 2007 ZC Miao <hellwolf.misty@gmail.com> - 0.5-5
 - update to fix EVR problem
 
 * Sun Apr 15 2007 ZC Miao <hellwolf.misty@gmail.com> - 0.5-2
