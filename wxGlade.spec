@@ -1,7 +1,7 @@
 Summary: 	A wxWidgets/wxPython/wxPerl GUI designer
 Name: 		wxGlade
 Version: 	0.5
-Release: 5%{?dist}
+Release: 6%{?dist}
 Source0: 	http://downloads.sourceforge.net/wxglade/%{name}-%{version}.tar.gz
 Source1:    wxglade.desktop
 Source2:    wxglade.png
@@ -14,6 +14,9 @@ BuildRequires: desktop-file-utils
 Requires: 	python >= 2.2
 Requires: 	wxPython >= 2.6
 
+# bug 248795
+Patch10: wxglade-0.5-docs_path.patch
+
 %description
 wxGlade is a GUI designer written in Python with the popular GUI
 toolkit wxPython, that helps you create wxWidgets/wxPython user
@@ -22,6 +25,8 @@ interfaces. At the moment it can generate Python, C++, Perl and XRC
 
 %prep
 %setup -q
+%patch10 -p0 -b .docs_path
+
 
 %build
 # nothing to do
@@ -85,6 +90,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Jul 19 2007 ZC Miao <hellwolf.misty@gmail.com> - 0.5-6
+- 248795 , patch for launch help docs correctly
+
 * Mon Apr 16 2007 ZC Miao <hellwolf.misty@gmail.com> - 0.5-5
 - update to fix EVR problem
 
