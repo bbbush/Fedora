@@ -1,7 +1,7 @@
 Summary: 	A wxWidgets/wxPython/wxPerl GUI designer
 Name: 		wxGlade
-Version: 	0.5
-Release: 6%{?dist}
+Version: 	0.6.1
+Release: 1%{?dist}
 Source0: 	http://downloads.sourceforge.net/wxglade/%{name}-%{version}.tar.gz
 Source1:    wxglade.desktop
 Source2:    wxglade.png
@@ -14,9 +14,6 @@ BuildRequires: desktop-file-utils
 Requires: 	python >= 2.2
 Requires: 	wxPython >= 2.6
 
-# bug 248795
-Patch10: wxglade-0.5-docs_path.patch
-
 %description
 wxGlade is a GUI designer written in Python with the popular GUI
 toolkit wxPython, that helps you create wxWidgets/wxPython user
@@ -25,7 +22,6 @@ interfaces. At the moment it can generate Python, C++, Perl and XRC
 
 %prep
 %setup -q
-%patch10 -p0 -b .docs_path
 
 
 %build
@@ -67,6 +63,9 @@ desktop-file-install --vendor=fedora \
 install -m 755 -d $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/32x32/apps
 install -m 644 -p %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/32x32/apps
 
+# docs symlink
+ln -s %{_docdir}/%{name}-%{version}/docs $RPM_BUILD_ROOT%{_datadir}/%{name}/docs
+
 %post
 touch --no-create %{_datadir}/icons/hicolor || :
 %{_bindir}/gtk-update-icon-cache --quiet %{_datadir}/icons/hicolor || :
@@ -90,6 +89,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sat Nov 24 2007 ZC Miao <hellwolf.misty@gmail.com> - 0.6.1-1
+- update to 0.6.1
+- remove docs path patch, add a docs symlink instead
+
 * Thu Jul 19 2007 ZC Miao <hellwolf.misty@gmail.com> - 0.5-6
 - 248795 , patch for launch help docs correctly
 
