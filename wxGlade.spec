@@ -1,7 +1,7 @@
 Summary: 	A wxWidgets/wxPython/wxPerl GUI designer
 Name: 		wxGlade
 Version: 	0.6.3
-Release: 3%{?dist}
+Release: 4%{?dist}
 Source0: 	http://downloads.sourceforge.net/wxglade/%{name}-%{version}.tar.gz
 Source1:    wxglade.desktop
 Source2:    wxglade.png
@@ -89,6 +89,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Jul 27 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.6.3-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_12_Mass_Rebuild
+
 * Wed Feb 25 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.6.3-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_11_Mass_Rebuild
 
