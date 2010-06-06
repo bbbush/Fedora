@@ -89,6 +89,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Jun  6 2010 ZC Miao <hellwolf.misty@gmail.com> - 0.6.3tip20091130-2
+- update source
+
 * Mon Nov 30 2009 ZC Miao <hellwolf.misty@gmail.com> - 0.6.3tip20091130-1
 - update to tip version
 
