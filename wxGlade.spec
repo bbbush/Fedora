@@ -1,7 +1,7 @@
 Summary: 	A wxWidgets/wxPython/wxPerl GUI designer
 Name: 		wxGlade
 Version: 	0.6.3tip20091130
-Release:    1%{?dist}
+Release:    2%{?dist}
 Source0: 	http://downloads.sourceforge.net/wxglade/%{name}-%{version}.tar.gz
 Source1:    wxglade.desktop
 Source2:    wxglade.png
