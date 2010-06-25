@@ -1,7 +1,7 @@
 Summary: 	A wxWidgets/wxPython/wxPerl GUI designer
 Name: 		wxGlade
-Version: 	0.6.3tip20091130
-Release:    2%{?dist}
+Version: 	0.6.3tip20100625
+Release:    1%{?dist}
 Source0: 	http://downloads.sourceforge.net/wxglade/%{name}-%{version}.tar.gz
 Source1:    wxglade.desktop
 Source2:    wxglade.png
@@ -89,6 +89,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Jun  25 2010 ZC Miao <hellwolf.misty@gmail.com> - 0.6.3tip20100625-1
+- update to tip20100625
+
 * Sun Jun  6 2010 ZC Miao <hellwolf.misty@gmail.com> - 0.6.3tip20091130-2
 - update source
 
