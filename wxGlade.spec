@@ -1,14 +1,13 @@
 Summary: 	A wxWidgets/wxPython/wxPerl GUI designer
 Name: 		wxGlade
 Version: 	0.6.3tip20100625
-Release:    5%{?dist}
+Release:    	6%{?dist}
 Source0: 	http://downloads.sourceforge.net/wxglade/%{name}-%{version}.tar.gz
 Source1:    wxglade.desktop
 Source2:    wxglade.png
 License: 	MIT
 URL:        http://wxglade.sourceforge.net/
 Group: 		Development/Tools
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: 	noarch
 BuildRequires: desktop-file-utils
 Requires: 	python >= 2.2
@@ -30,7 +29,6 @@ interfaces. At the moment it can generate Python, C++, Perl and XRC
 
 %install
 # cleanup
-rm -rf $RPM_BUILD_ROOT
 
 # make dirs
 install -m 755 -d $RPM_BUILD_ROOT%{_bindir}
@@ -57,7 +55,7 @@ EOF
 chmod +x $RPM_BUILD_ROOT%{_bindir}/wxglade
 
 # install desktop entry
-desktop-file-install --vendor=fedora \
+desktop-file-install  \
   --dir=$RPM_BUILD_ROOT%{_datadir}/applications         \
   %{SOURCE1}
 install -m 755 -d $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/32x32/apps
@@ -76,11 +74,7 @@ touch --no-create %{_datadir}/icons/hicolor || :
 %{_bindir}/gtk-update-icon-cache --quiet %{_datadir}/icons/hicolor || :
 update-desktop-database %{_datadir}/applications &>/dev/null || :
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files
-%defattr(-,root,root,-)
 %doc docs CHANGES.txt README.txt TODO.txt credits.txt license.txt
 %{_bindir}/wxglade
 %{_datadir}/%{name}
@@ -89,6 +83,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Feb 10 2013 Parag Nemade <paragn AT fedoraproject DOT org> - 0.6.3tip20100625-6
+- Remove vendor tag from desktop file as per https://fedorahosted.org/fesco/ticket/1077
+- Cleanup spec as per recently changed packaging guidelines
+
 * Sun Jul 22 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.6.3tip20100625-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
 
