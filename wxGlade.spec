@@ -1,7 +1,7 @@
 Summary: 	A wxWidgets/wxPython/wxPerl GUI designer
 Name: 		wxGlade
 Version: 	0.6.3tip20100625
-Release:    	6%{?dist}
+Release:    	7%{?dist}
 Source0: 	http://downloads.sourceforge.net/wxglade/%{name}-%{version}.tar.gz
 Source1:    wxglade.desktop
 Source2:    wxglade.png
@@ -83,6 +83,9 @@ update-desktop-database %{_datadir}/applications &>/dev/null || :
 
 
 %changelog
+* Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.6.3tip20100625-7
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
+
 * Sun Feb 10 2013 Parag Nemade <paragn AT fedoraproject DOT org> - 0.6.3tip20100625-6
 - Remove vendor tag from desktop file as per https://fedorahosted.org/fesco/ticket/1077
 - Cleanup spec as per recently changed packaging guidelines
