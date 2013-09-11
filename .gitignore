@@ -1,1 +1,5 @@
+*.log
+*.rpm
 wxGlade-0.6.3tip20100625.tar.gz
+/wxGlade-0.6.8.hg5caa450eb90cef77522fcc30185e8b623aaeed7a.tar.gz
+/wxGlade-*/

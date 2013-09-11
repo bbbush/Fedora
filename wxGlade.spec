@@ -1,17 +1,23 @@
-Summary: 	A wxWidgets/wxPython/wxPerl GUI designer
-Name: 		wxGlade
-Version: 	0.6.3tip20100625
-Release:    	7%{?dist}
-Source0: 	http://downloads.sourceforge.net/wxglade/%{name}-%{version}.tar.gz
-Source1:    wxglade.desktop
-Source2:    wxglade.png
-License: 	MIT
-URL:        http://wxglade.sourceforge.net/
-Group: 		Development/Tools
-BuildArch: 	noarch
-BuildRequires: desktop-file-utils
-Requires: 	python >= 2.2
-Requires: 	wxPython >= 2.6
+# hg log -l1 --template {node}
+%define uvt .hg5caa450eb90cef77522fcc30185e8b623aaeed7a
+# hg id -i
+%define checkout hg5caa450eb90c
+
+Summary:	A wxWidgets/wxPython/wxPerl GUI designer
+Name:		wxGlade
+Version:	0.6.8
+Release:	1.%{?checkout}%{?dist}
+# hg archive -p wxGlade-0.6.8 -t tgz ../../wxGlade/wxGlade-0.6.8.hg`hg log -l1 --template {node}`.tar.gz
+Source0:	%{name}-%{version}%{?uvt}.tar.gz
+Source1:	wxglade.desktop
+Source2:	wxglade.png
+License:	MIT
+URL:		http://wxglade.sourceforge.net
+Group:		Development/Tools
+BuildArch:	noarch
+BuildRequires:	desktop-file-utils
+Requires:	python >= 2.3
+Requires:	wxPython >= 2.6
 
 %description
 wxGlade is a GUI designer written in Python with the popular GUI
@@ -83,6 +89,14 @@ update-desktop-database %{_datadir}/applications &>/dev/null || :
 
 
 %changelog
+* Tue Sep 10 2013 bbbush <bbbush.yuan@gmail.com> - 0.6.8-1.hg5caa450eb90c
+- Update to latest snapshot; a brief history:
+- * 2013-07-13 0.6.8
+- * 2013-04-07 0.6.7
+- * 2013-03-29 0.6.6
+- * 2012-01-08 0.6.5
+- * 2011-12-21 0.6.4
+
 * Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.6.3tip20100625-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
